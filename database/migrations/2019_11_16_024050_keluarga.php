@@ -13,10 +13,10 @@ class Keluarga extends Migration
      */
     public function up()
     {
-        Schema::create('keluarga', function (Blueprint $table) {
+        Schema::create('families', function (Blueprint $table) {
             $table->bigIncrements('id');
             
-            $table->string('nama');
+            $table->string('name')->nullable();
             
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class Keluarga extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keluarga');
+        Schema::dropIfExists('families');
     }
 }

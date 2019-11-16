@@ -13,12 +13,12 @@ class Agenda extends Migration
      */
     public function up()
     {
-        Schema::create('agenda', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('keluarga_id');
+            $table->bigInteger('id_keluarga')->nullable();
             
-            $table->string('nama');
-            $table->date('tanggal');
+            $table->string('name')->nullable();
+            $table->date('date')->nullable();
 
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class Agenda extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agenda');
+        Schema::dropIfExists('events');
     }
 }

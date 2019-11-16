@@ -13,10 +13,10 @@ class Chat extends Migration
      */
     public function up()
     {
-        Schema::create('chat', function (Blueprint $table) {
+        Schema::create('chats', function (Blueprint $table) {
             $table->bigIncrements('id');
             
-            $table->string('pesan');
+            $table->string('message')->nullable();
             
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class Chat extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chat');
+        Schema::dropIfExists('chats');
     }
 }
