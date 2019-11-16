@@ -17,7 +17,7 @@ class AddApiTokenFieldUsers extends Migration
             $table->string('status')->nullable();
             $table->string('location')->nullable();
             $table->integer('family_id')->nullable()->unsigned();
-            $table->foreign('family_id')->references('id')->on('family')->onDelete('cascade');
+            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -31,6 +31,7 @@ class AddApiTokenFieldUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('status');
             $table->dropColumn('location');
+            $table->dropColumn('family_id');
         });
     }
 }

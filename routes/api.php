@@ -27,4 +27,6 @@ Route::group([ 'middleware' => 'auth:api' ], function() {
     Route::post('create-family', 'Api\Family\FamilyController@store');
     Route::post('add-child', 'Api\Family\ChildController@store');
     Route::post('add-parent', 'Api\Family\ParentController@store');
+    
+    Route::post('add-event', 'Api\EventController@store');
 });

@@ -14,11 +14,12 @@ class Agenda extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('id_keluarga')->nullable();
+            $table->increments('id');
             
             $table->string('name')->nullable();
             $table->date('date')->nullable();
+            $table->integer('family_id')->nullable()->unsigned();
+            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

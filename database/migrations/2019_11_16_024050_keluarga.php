@@ -14,7 +14,7 @@ class Keluarga extends Migration
     public function up()
     {
         Schema::create('families', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             
             $table->string('name')->nullable();
             

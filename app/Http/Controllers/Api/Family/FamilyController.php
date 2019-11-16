@@ -22,10 +22,10 @@ class FamilyController extends Controller
     	]);
 
     	$iam = $request->user();
-
+    	
     	if ($iam->id_keluarga == null) {
     		$iam->update([
-    			'id_keluarga' => $family->id
+    			'family_id' => $family->id
     		]);
     	}
 
