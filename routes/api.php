@@ -27,6 +27,7 @@ Route::group([ 'prefix' => 'auth' ], function () {
 
 Route::group([ 'middleware' => 'auth:api' ], function() {
     Route::post('create-family', 'Api\Family\FamilyController@store');
+    Route::delete('delete-family/{id}', 'Api\Family\FamilyController@destroy');
 
     Route::post('add-child', 'Api\Family\ChildController@store');
     Route::delete('delete-child/{id}', 'Api\Family\ChildController@destroy');

@@ -22,7 +22,7 @@ class FamilyController extends Controller
     	]);
 
     	$iam = $request->user();
-    	
+
     	if ($iam->id_keluarga == null) {
     		$iam->update([
     			'family_id' => $family->id
@@ -32,5 +32,14 @@ class FamilyController extends Controller
     	return response()->json([
             'message' => 'Successfully created family!'
         ], 201);
+    }
+
+    public function destroy($id)
+    {
+		Family::destroy($id);
+
+    	return response()->json([
+	        'message' => 'Successfully Delete Family!'
+	    ], 200);
     }
 }
