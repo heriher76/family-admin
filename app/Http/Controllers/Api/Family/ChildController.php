@@ -31,4 +31,21 @@ class ChildController extends Controller
 	        'message' => 'Successfully created Child!'
 	    ], 201);
     }
+
+    public function destroy($id)
+    {
+    	$user = User::where('id', $id)->first();
+
+    	if ($user->status == 'Anak') {
+    		User::destroy($id);
+
+	    	return response()->json([
+		        'message' => 'Successfully Delete Child!'
+		    ], 200);
+    	}else{
+	    	return response()->json([
+		        'message' => 'Unauthorized!'
+		    ], 403);
+    	}
+    }
 }

@@ -27,8 +27,14 @@ Route::group([ 'prefix' => 'auth' ], function () {
 
 Route::group([ 'middleware' => 'auth:api' ], function() {
     Route::post('create-family', 'Api\Family\FamilyController@store');
+
     Route::post('add-child', 'Api\Family\ChildController@store');
+    Route::delete('delete-child/{id}', 'Api\Family\ChildController@destroy');
+
     Route::post('add-parent', 'Api\Family\ParentController@store');
+    Route::delete('delete-parent/{id}', 'Api\Family\ParentController@destroy');
     
     Route::post('add-event', 'Api\EventController@store');
+    Route::put('update-event/{id}', 'Api\EventController@update');
+    Route::delete('delete-event/{id}', 'Api\EventController@destroy');
 });

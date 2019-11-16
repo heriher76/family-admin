@@ -31,4 +31,21 @@ class ParentController extends Controller
 	        'message' => 'Successfully created Parent!'
 	    ], 201);
     }
+
+    public function destroy($id)
+    {
+    	$user = User::where('id', $id)->first();
+
+    	if ($user->status != 'Anak') {
+    		User::destroy($id);
+
+	    	return response()->json([
+		        'message' => 'Successfully Delete Parent!'
+		    ], 200);
+    	}else{
+	    	return response()->json([
+		        'message' => 'Unauthorized!'
+		    ], 403);
+    	}
+    }
 }
