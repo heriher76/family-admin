@@ -18,6 +18,8 @@ Route::group([ 'prefix' => 'auth' ], function () {
     Route::post('signup', 'AuthController@signup');
   
     Route::group([ 'middleware' => 'auth:api' ], function() {
+        Route::put('update-profile', 'Api\ProfileController@update');
+
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
     });
