@@ -32,4 +32,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Family', 'family_id');
     }
+    public function chats()
+    {
+        return $this->hasMany('App\Chat', 'user_id');
+    }
 }

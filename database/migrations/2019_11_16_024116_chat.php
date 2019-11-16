@@ -17,6 +17,10 @@ class Chat extends Migration
             $table->bigIncrements('id');
             
             $table->string('message')->nullable();
+            $table->integer('user_id')->nullable()->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('family_id')->nullable()->unsigned();
+            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamps();
         });

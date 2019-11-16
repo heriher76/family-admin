@@ -16,4 +16,8 @@ class Family extends Model
     {
     	return $this->hasMany('App\Event', 'family_id');
     }
+    public function chats()
+    {
+    	return $this->hasMany('App\Chat', 'family_id');
+    }
 }

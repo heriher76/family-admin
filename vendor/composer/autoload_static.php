@@ -449,10 +449,16 @@ class ComposerStaticInit574e3a16a26f8ccb94eaf591db2926e4
     );
 
     public static $classMap = array (
-        'App\\Child' => __DIR__ . '/../..' . '/app/Child.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Family' => __DIR__ . '/../..' . '/app/Family.php',
         'App\\Http\\Controllers\\Admin\\AdminPagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminPagesController.php',
+        'App\\Http\\Controllers\\Api\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/EventController.php',
+        'App\\Http\\Controllers\\Api\\Family\\ChildController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Family/ChildController.php',
+        'App\\Http\\Controllers\\Api\\Family\\FamilyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Family/FamilyController.php',
+        'App\\Http\\Controllers\\Api\\Family\\ParentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/Family/ParentController.php',
+        'App\\Http\\Controllers\\Api\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ProfileController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/AuthController.blade.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',

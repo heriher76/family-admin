@@ -6,10 +6,16 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Child' => $baseDir . '/app/Child.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Event' => $baseDir . '/app/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Family' => $baseDir . '/app/Family.php',
     'App\\Http\\Controllers\\Admin\\AdminPagesController' => $baseDir . '/app/Http/Controllers/Admin/AdminPagesController.php',
+    'App\\Http\\Controllers\\Api\\EventController' => $baseDir . '/app/Http/Controllers/Api/EventController.php',
+    'App\\Http\\Controllers\\Api\\Family\\ChildController' => $baseDir . '/app/Http/Controllers/Api/Family/ChildController.php',
+    'App\\Http\\Controllers\\Api\\Family\\FamilyController' => $baseDir . '/app/Http/Controllers/Api/Family/FamilyController.php',
+    'App\\Http\\Controllers\\Api\\Family\\ParentController' => $baseDir . '/app/Http/Controllers/Api/Family/ParentController.php',
+    'App\\Http\\Controllers\\Api\\ProfileController' => $baseDir . '/app/Http/Controllers/Api/ProfileController.php',
     'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/Api/AuthController.blade.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',

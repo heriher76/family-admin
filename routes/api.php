@@ -38,4 +38,6 @@ Route::group([ 'middleware' => 'auth:api' ], function() {
     Route::post('add-event', 'Api\EventController@store');
     Route::put('update-event/{id}', 'Api\EventController@update');
     Route::delete('delete-event/{id}', 'Api\EventController@destroy');
+
+    Route::post('create-chat', 'Api\ChatController@store');
 });
