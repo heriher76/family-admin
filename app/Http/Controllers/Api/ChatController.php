@@ -8,6 +8,15 @@ use App\Chat;
 
 class ChatController extends Controller
 {
+	public function index(Request $request)
+	{
+    	$iam = $request->user();
+    	$chats = Chat::where('family_id', $iam->family->id)->with('Family')->with('User')->get();
+		
+		return response()->json([
+	        'data' => $chats
+	    ], 200);    	
+	}
     public function store(Request $request)
     {
     	$iam = $request->user();

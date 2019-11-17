@@ -31,13 +31,17 @@ Route::group([ 'middleware' => 'auth:api' ], function() {
 
     Route::post('add-child', 'Api\Family\ChildController@store');
     Route::delete('delete-child/{id}', 'Api\Family\ChildController@destroy');
+    Route::get('list-child', 'Api\Family\ChildController@index');
 
     Route::post('add-parent', 'Api\Family\ParentController@store');
     Route::delete('delete-parent/{id}', 'Api\Family\ParentController@destroy');
+    Route::get('list-parent', 'Api\Family\ParentController@index');
     
     Route::post('add-event', 'Api\EventController@store');
     Route::put('update-event/{id}', 'Api\EventController@update');
     Route::delete('delete-event/{id}', 'Api\EventController@destroy');
+    Route::get('list-event', 'Api\EventController@index');
 
     Route::post('create-chat', 'Api\ChatController@store');
+    Route::get('list-chat', 'Api\ChatController@index');
 });

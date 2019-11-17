@@ -8,6 +8,15 @@ use App\User;
 
 class ChildController extends Controller
 {
+	public function index(Request $request)
+	{
+    	$iam = $request->user();
+    	$childs = User::where('family_id', $iam->family->id)->where('status', 'Anak')->where('id', '!=', $iam->id)->with('Family')->get();
+		
+		return response()->json([
+	        'data' => $childs
+	    ], 200);    	
+	}
     public function store(Request $request)
     {
     	$iam = $request->user();

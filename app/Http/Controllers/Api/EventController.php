@@ -8,6 +8,15 @@ use App\Event;
 
 class EventController extends Controller
 {
+	public function index(Request $request)
+	{
+    	$iam = $request->user();
+    	$event = Event::where('family_id', $iam->family->id)->get();
+		
+		return response()->json([
+	        'data' => $event
+	    ], 200);    	
+	}
     public function store(Request $request)
     {
     	$iam = $request->user();
