@@ -92,6 +92,8 @@ class AuthController extends Controller
      */
     public function user(Request $request)
     {
-        return response()->json($request->user());
+        $user = User::where('id', $request->user()->id)->with('Family')->first();
+
+        return response()->json($user);
     }
 }
